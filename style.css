@@ -13,6 +13,10 @@ body {
     padding: 0 15px;
 }
 
+.hero-text-container {
+    z-index: 2;
+}
+
 /* Заголовок, підзаголовок та кнопка */
 .hero-title {
     font-family: 'Playfair Display', serif;
@@ -65,19 +69,24 @@ body {
 .image-wrapper {
     position: relative;
     overflow: visible;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05);
 }
 
 /* Зображення */
 .hero-image {
     border-radius: 20px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    transform: scale(0.95) rotate(-3deg);
+    transform: scale(0.95);
     opacity: 0;
     animation: fadeInScale 1.2s ease-out 0.6s forwards;
 }
 
 .hero-image:hover {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -95,11 +104,11 @@ body {
     position: absolute;
     top: 10%;
     left: 10%;
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.4);
     transform: rotate(15deg);
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -111,8 +120,8 @@ body {
     position: absolute;
     bottom: 15%;
     right: 15%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -132,8 +141,8 @@ body {
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -167,24 +176,24 @@ body {
 }
 
 .circle-1 {
-    width: 250px;
-    height: 250px;
-    top: 15%;
-    left: -120px;
+    width: 350px;
+    height: 350px;
+    top: 5%;
+    left: -150px;
 }
 
 .circle-2 {
-    width: 180px;
-    height: 180px;
-    bottom: 5%;
-    right: -80px;
+    width: 250px;
+    height: 250px;
+    bottom: 15%;
+    right: -120px;
 }
 
 .circle-3 {
-    width: 120px;
-    height: 120px;
-    top: 50%;
-    right: -50px;
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: -70px;
 }
 
 /* Анімації */
@@ -235,5 +244,34 @@ body {
 
     100% {
         transform: translate(0, 0);
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    #hero {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hero-image {
+        transform: scale(1);
+        width: 100%;
+    }
+
+    .hero-text-container {
+        text-align: center;
+    }
+
+    .image-overlay,
+    .decorative-background {
+        display: none;
     }
 }

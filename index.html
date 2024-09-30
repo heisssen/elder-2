@@ -21,29 +21,31 @@
 
 <body>
     <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center position-relative">
+    <section id="hero" class="d-flex align-items-center position-relative overflow-hidden">
         <!-- Декоративні елементи (кола, лінії) -->
-        <div class="decorative-circle circle-1"></div>
-        <div class="decorative-circle circle-2"></div>
-        <div class="decorative-circle circle-3"></div>
+        <div class="decorative-circle circle-1 d-none d-md-block"></div>
+        <div class="decorative-circle circle-2 d-none d-md-block"></div>
+        <div class="decorative-circle circle-3 d-none d-md-block"></div>
 
         <div class="container position-relative">
             <div class="row justify-content-between align-items-center">
                 <!-- Текстова частина -->
-                <div class="col-lg-6 d-flex flex-column justify-content-center hero-text-container">
+                <div
+                    class="col-lg-6 col-md-12 d-flex flex-column justify-content-center hero-text-container order-2 order-lg-1 text-center text-lg-start">
                     <h1 class="hero-title">Тепло та турбота кожного дня, для ваших рідних у Вінниці.</h1>
                     <p class="hero-subtitle">Місце, де кожен відчуває себе вдома. Турбота, безпека та активне життя для
                         літніх людей. Поговоримо про комфорт ваших рідних?</p>
                     <a href="#contact" class="btn btn-gradient hero-btn">Поговоримо за чашкою чаю?</a>
                 </div>
                 <!-- Зображення -->
-                <div class="col-lg-5 position-relative hero-image-container d-none d-lg-block">
-                    <!-- Головне зображення -->
+                <div
+                    class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center position-relative hero-image-container order-1 order-lg-2 mb-5 mb-lg-0">
                     <div class="image-wrapper position-relative">
+                        <!-- Головне зображення -->
                         <img src="elder-fun.jpg"
-                            class="img-fluid hero-image rounded shadow-lg" alt="Затишок для літніх людей">
+                            class="img-fluid hero-image shadow-lg" alt="Затишок для літніх людей">
                         <!-- Елементи поверх зображення -->
-                        <div class="image-overlay">
+                        <div class="image-overlay d-none d-lg-block">
                             <div class="overlay-rectangle"></div>
                             <div class="overlay-circle"></div>
                             <div class="overlay-dots">
@@ -54,7 +56,7 @@
                         </div>
                     </div>
                     <!-- Декоративний фон за зображенням -->
-                    <div class="decorative-background"></div>
+                    <div class="decorative-background d-none d-lg-block"></div>
                 </div>
             </div>
         </div>
