@@ -1,0 +1,239 @@
+/* Основні стилі */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAFAFA;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #A7D7C5, #BFDCE5);
+    position: relative;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+/* Заголовок, підзаголовок та кнопка */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInMove 1s ease-out forwards;
+}
+
+.hero-subtitle {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: #34495E;
+    margin-bottom: 20px;
+    opacity: 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeInMove 1s ease-out 0.2s forwards;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #E98973, #F4E2D8);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInMove 1s ease-out 0.4s forwards;
+}
+
+.hero-btn:hover {
+    background: linear-gradient(45deg, #F4C2B0, #E98973);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Контейнер зображення */
+.hero-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+/* Зображення */
+.hero-image {
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform: scale(0.95) rotate(-3deg);
+    opacity: 0;
+    animation: fadeInScale 1.2s ease-out 0.6s forwards;
+}
+
+.hero-image:hover {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Елементи поверх зображення */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.overlay-rectangle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 100px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(15deg);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover .overlay-rectangle {
+    transform: rotate(5deg);
+}
+
+.overlay-circle {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover .overlay-circle {
+    transform: scale(1.1);
+}
+
+.overlay-dots {
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper:hover .dot {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Декоративний фон */
+.decorative-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -30px;
+    left: -30px;
+    border-radius: 50%;
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    z-index: -1;
+    animation: moveBg 8s ease-in-out infinite;
+}
+
+/* Декоративні кола */
+.decorative-circle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+    width: 250px;
+    height: 250px;
+    top: 15%;
+    left: -120px;
+}
+
+.circle-2 {
+    width: 180px;
+    height: 180px;
+    bottom: 5%;
+    right: -80px;
+}
+
+.circle-3 {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    right: -50px;
+}
+
+/* Анімації */
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes moveBg {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
